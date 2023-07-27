@@ -1,0 +1,17 @@
+{
+    "name": "laracasts/transcriptions",
+    "autoload": {
+        "psr-4": {
+            "Laracasts\\Transcriptions\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ljubica",
+            "email": "ljubica.samardzic22@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpunit/phpunit": "^10.2"
+    }
+}
