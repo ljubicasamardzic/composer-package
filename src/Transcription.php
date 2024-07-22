@@ -24,18 +24,16 @@ class Transcription
 
     public function __toString()
     {
-        return implode("", $this->lines);
+        return implode("\n", $this->lines);
     }
 
     public function lines(): array
     {
-        $results = [];
+       $lines = array_chunk($this->lines, 2);
 
-        for ($i = 0; $i < count($this->lines); $i+=2) {
-            $results[] = new Line($this->lines[$i], $this->lines[$i+1]);
-        }
-
-        return $results;
+        return array_map(function ($line) {
+            return new Line($line[0], $line[1]);
+        }, $lines);
     }
 
     public function htmlLines()
