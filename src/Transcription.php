@@ -38,6 +38,14 @@ class Transcription
         return $results;
     }
 
+    public function htmlLines()
+    {
+        return implode("\n", array_map(
+            fn(Line $line) => $line->toAnchorTag(),
+            $this->lines()
+        ));
+    }
+
     protected function discardInvalidLines(array $lines): array
     {
         return array_values(array_filter(
